@@ -17,13 +17,13 @@ public class UserController {
 	@Autowired
 	private AuthManagerService authManagerService;
 
-	@RequestMapping(method = RequestMethod.GET, value = "welcome.htm")
+	@RequestMapping(method = RequestMethod.GET, value = "useraccounts")
 	public ModelAndView test(
 			@RequestParam(value = "name", required = false) String name) {
 
 		List<UserAccounts> userAccounts = authManagerService
 				.findAllUserAccounts();
-//
+
 		for (UserAccounts ua : userAccounts) {
 			name = ua.getUsername();
 		}
